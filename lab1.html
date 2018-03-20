@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" type="text/css" media="all" /> 
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="icon" sizes="192x192" href="pic.jpg">
+      <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"   async defer></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+
+  </head>
+    
+  <body>
+    <div id="map"></div>
+      <button type="button" class="btn btn-primary" id="zoomin">+</button>
+      <button type="button" class="btn btn-danger" id="zoomout">-</button>
+       <button type="button" class="btn btn" id="left">left</button>
+       <button type="button" class="btn btn" id="up">up</button>
+       <button type="button" class="btn btn" id="down">down</button>
+       <button type="button" class="btn btn" id="right">right</button>
+      <button type="button" class="btn btn-success" id="add">Add</button>
+      <p id="demo"></p>
+
+  </body>
+            <script src="script.js" type="text/javascript"></script>
+    <script>
+    /*Hides adress bar on load*/
+    $(function() {
+    window.scrollTo(0,1);
+    getLocation();
+    });
+    </script>
+
+</html>

@@ -4,7 +4,9 @@
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 59.3498092, lng: 18.0684758},
-          zoom: 15
+          zoom: 15,
+            disableDefaultUI: true,
+            mapTypeId: 'hybrid'
         });
           
           var marker1 = new google.maps.Marker({
@@ -19,7 +21,7 @@
           title: 'Not Draggable'
         });
           marker1.setDraggable(true);
-          marker1.setAnimation(google.maps.Animation.BOUNCE);
+         /* marker1.setAnimation(google.maps.Animation.BOUNCE);*/
           marker2.setAnimation(google.maps.Animation.DROP);
       }
    
@@ -32,8 +34,7 @@ function getLocation() {
 }
                                         
 function showPosition(position) {
-    document.getElementById("demo").innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
+    
     lat = position.coords.latitude;
     lng = position.coords.longitude;
 }
@@ -67,7 +68,16 @@ function showPosition(position) {
         });
             marker3.setAnimation(google.maps.Animation.DROP);
         });
-
+        $('#terrain').click(function(){ 
+            map.setMapTypeId("terrain");
+        });
+        $('#satellite').click(function(){ 
+            console.log("asd");
+            map.setMapTypeId("satellite");
+        });
+        $('#roadmap').click(function(){ 
+            map.setMapTypeId("roadmap");
+        });
 
 
 
